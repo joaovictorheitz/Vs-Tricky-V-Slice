@@ -7,7 +7,7 @@ import funkin.Highscore;
 
 class DeathNote extends NoteKind
 {
-	public function new(noteKind:String, description:String = "", ?noteStyleId:String, ?params:Array<NoteKindParam>)
+	function new()
 	{
 		super("trickydeath", "Death Note (Tricky)", "deathnotes", []);
 	}
@@ -24,7 +24,7 @@ class DeathNote extends NoteKind
 	{
 		Highscore.tallies.totalNotes--;
 
-		event.cancel();
+		event.cancelEvent();
 	}
 
 	function onNoteHit(event:HitNoteScriptEvent)
@@ -35,7 +35,7 @@ class DeathNote extends NoteKind
 			return;
 		}
 
-		event.cancel();
+		event.cancelEvent();
 
 		PlayState.instance.playerStrumline.killNote(event.note);
 		FunkinSound.playOnce(Paths.sound("death"));

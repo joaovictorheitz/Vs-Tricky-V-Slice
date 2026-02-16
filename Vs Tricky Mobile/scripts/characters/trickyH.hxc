@@ -19,7 +19,11 @@ class TrickyHellclownCharacter extends MultiSparrowCharacter
 	{
 		super.onUpdate(event);
 		
-		if (PlayState.instance.currentStage.getDad().isSinging())
-			FlxG.camera.shake(0.02,0.2);
+		if (PlayState.instance != null && PlayState.instance.currentStage != null) 
+		{
+			var dad = PlayState.instance.currentStage.getDad();
+			if (dad != null && dad.isSinging())
+				FlxG.camera.shake(0.02,0.2);
+		}
 	}
 }

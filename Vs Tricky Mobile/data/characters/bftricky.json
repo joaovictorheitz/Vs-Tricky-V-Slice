@@ -74,12 +74,7 @@
 			"prefix": "BF HEY!!",
 			"offsets": [7, 4]
 		},
-		{
-			"name": "cheer",
-			"assetPath": "characters/BFCheer",
-			"prefix": "Cheer",
-			"offsets": [0, 0]
-		},
+
     {
       "name": "firstDeath",
 			"assetPath": "characters/signDeath",

@@ -2,6 +2,7 @@ import funkin.graphics.FunkinSprite;
 import funkin.Paths;
 import funkin.play.character.MultiSparrowCharacter;
 import funkin.play.GameOverSubState;
+import funkin.FunkinMemory;
 
 class BFTrickyCharacter extends MultiSparrowCharacter
 {
@@ -12,8 +13,6 @@ class BFTrickyCharacter extends MultiSparrowCharacter
 
 	function onCreate(event:ScriptEvent)
 	{
-		FunkinSprite.cacheTexture(Paths.image("characters/signDeath"));
-
 		super.onCreate(event);
 
 		GameOverSubState.musicSuffix = "Trickster";

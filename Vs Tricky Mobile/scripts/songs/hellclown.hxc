@@ -89,7 +89,7 @@ class HellClownSong extends Song
 
     	hasPlayedCutscene = true;
       
-      	event.cancel();
+      	event.cancelEvent();
 
 		PlayState.instance.camHUD.visible = false;
 		PlayState.instance.isInCutscene = true;

@@ -78,8 +78,8 @@ class AuditorHellStage extends Stage
 
     function onSongRetry(event) 
 	{
-		remove(cloneOne);
-		remove(cloneTwo);
+		if (cloneOne != null) remove(cloneOne);
+		if (cloneTwo != null) remove(cloneTwo);
 		refresh();
     }
 }

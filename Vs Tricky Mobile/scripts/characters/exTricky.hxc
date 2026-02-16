@@ -29,7 +29,7 @@ class TrickyExpurgationCharacter extends MultiSparrowCharacter
 	{
 		super.onUpdate(event);
 
-		if (this.animation != null && exSpikes != null)
+		if (this.animation != null && this.animation.curAnim != null && exSpikes != null)
 		{
 			if (exSpikes.animation.frameIndex >= 3)
 			{
@@ -43,7 +43,7 @@ class TrickyExpurgationCharacter extends MultiSparrowCharacter
 	{
 		super.playAnimation(name, restart, ignoreOther, reverse);
 		
-		if (exSpikes != null) {
+		if (exSpikes != null && this.animation != null && this.animation.curAnim != null) {
 			if (exSpikes.animation.finished)
 			{
 				if (this.animation.curAnim.name == 'singUP' || this.animation.curAnim.name == 'singUP-hold')

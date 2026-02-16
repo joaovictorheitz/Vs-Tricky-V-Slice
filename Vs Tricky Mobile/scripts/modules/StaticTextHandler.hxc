@@ -167,8 +167,10 @@ class StaticTexthandler extends Module
 
     function resetSpookyTextManual():Void
     {
-		staticSpr.alpha = 0;
-		spookyText.alpha = 0;
+		if (staticSpr != null)
+			staticSpr.alpha = 0;
+		if (spookyText != null)
+			spookyText.alpha = 0;
 		resetSpookyText = true;
 	}
 
@@ -176,10 +178,11 @@ class StaticTexthandler extends Module
     {
         switch (trickySongsArray.indexOf(PlayState.instance.currentChart.song.id))
         {
-            case 0: ["SUFFER","INCORRECT", "INCOMPLETE", "INSUFFICIENT", "INVALID", "CORRECTION", "MISTAKE", "REDUCE", "ERROR", "ADJUSTING", "IMPROBABLE", "IMPLAUSIBLE", "MISJUDGED"];
-            case 1: ["SUFFER","INCORRECT", "INCOMPLETE", "INSUFFICIENT", "INVALID", "CORRECTION", "MISTAKE", "REDUCE", "ERROR", "ADJUSTING", "IMPROBABLE", "IMPLAUSIBLE", "MISJUDGED"];
-            case 2: [];
-            case 3: ["YOU AREN'T HANK", "WHERE IS HANK", "HANK???", "WHO ARE YOU", "WHERE AM I", "THIS ISN'T RIGHT", "MIDGET", "SYSTEM UNRESPONSIVE", "WHY CAN'T I KILL?????"];
+            case 0: return ["SUFFER","INCORRECT", "INCOMPLETE", "INSUFFICIENT", "INVALID", "CORRECTION", "MISTAKE", "REDUCE", "ERROR", "ADJUSTING", "IMPROBABLE", "IMPLAUSIBLE", "MISJUDGED"];
+            case 1: return ["SUFFER","INCORRECT", "INCOMPLETE", "INSUFFICIENT", "INVALID", "CORRECTION", "MISTAKE", "REDUCE", "ERROR", "ADJUSTING", "IMPROBABLE", "IMPLAUSIBLE", "MISJUDGED"];
+            case 2: return [];
+            case 3: return ["YOU AREN'T HANK", "WHERE IS HANK", "HANK???", "WHO ARE YOU", "WHERE AM I", "THIS ISN'T RIGHT", "MIDGET", "SYSTEM UNRESPONSIVE", "WHY CAN'T I KILL?????"];
         }
+        return [];
     }
 }

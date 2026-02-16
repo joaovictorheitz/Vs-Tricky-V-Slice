@@ -101,7 +101,7 @@ class ExpurgationGremlin extends Module
 								}
 								else
 								{
-									final pp = FlxMath.lerp(startHealth, toHealth, tween2.percent);
+											var pp = FlxMath.lerp(startHealth, toHealth, tween2.percent);
 									if (pp <= 0)
 										pp = 0.1;
 									PlayState.instance.health = pp;
