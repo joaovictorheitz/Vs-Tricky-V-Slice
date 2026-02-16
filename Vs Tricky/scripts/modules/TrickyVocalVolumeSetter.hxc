@@ -15,6 +15,6 @@ class VocalVolumeSetter extends Module
 			return;
 			
 		if (event.judgement == "perfect" && trickySongsArray.contains(PlayState.instance.currentSong.id))
-			PlayState.instance.vocals.set_playerVolume(1);
+			PlayState.instance.vocals.playerVolume = 1;
 	}
 }

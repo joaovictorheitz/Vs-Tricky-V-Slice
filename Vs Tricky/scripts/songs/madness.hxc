@@ -64,7 +64,7 @@ class MadnessSong extends Song
 
     	hasPlayedCutscene = true;
 
-      	event.cancel();
+      	event.cancelEvent();
 
 		PlayState.instance.camHUD.visible = false;
 
@@ -275,7 +275,7 @@ class MadnessSong extends Song
 	{
     	if(!PlayState.instance.isInCutscene && PlayStatePlaylist.isStoryMode)
 		{
-      		event.cancel();
+      		event.cancelEvent();
 			playCutscene();
 		}
 

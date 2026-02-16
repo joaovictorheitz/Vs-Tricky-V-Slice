@@ -16,6 +16,7 @@ class ExpurgationGremlinEvent extends SongEvent
 			return;
 
 		var gremlin = ModuleHandler.getModule("ExpurgationGremlin");
+		if (gremlin == null) return;
 		gremlin.forcedDisappear();
 		gremlin.appear(data.value.hpToTake, data.value.duration, data.value.persist);
 

@@ -30,11 +30,21 @@ class ImprobableOutsetSong extends Song
     	if(hasPlayedCutscene || !PlayStatePlaylist.isStoryMode) return;
 
       	hasPlayedCutscene = true;
-      	PlayState.instance.currentStage.getDad().alpha = 0.000001;
-      	PlayState.instance.currentStage.getGirlfriend().alpha = 0.000001;
-      	PlayState.instance.camHUD.alpha = 0.000001;
+      	event.cancelEvent();
 
-      	event.cancel();
+      	var state = PlayState.instance;
+      	if (state != null && state.currentStage != null)
+      	{
+      		var dad = state.currentStage.getDad();
+      		if (dad != null) dad.alpha = 0.000001;
+      		var gf = state.currentStage.getGirlfriend();
+      		if (gf != null) gf.alpha = 0.000001;
+      	}
+      	if (state != null)
+      	{
+      		state.camHUD.visible = false;
+      		state.camHUD.alpha = 0.000001;
+      	}
 
       	playCutscene();
 	}
@@ -220,6 +230,7 @@ class ImprobableOutsetSong extends Song
 			  				state.add(black3);
 			  				tmr.reset(0.3);
 			  				FlxG.camera.stopFX();
+      		      			state.camHUD.visible = true;
       		      			state.camHUD.alpha = 1;
       		      			state.isInCutscene = false;
 			  			}

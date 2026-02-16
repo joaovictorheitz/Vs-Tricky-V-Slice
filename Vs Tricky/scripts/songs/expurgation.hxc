@@ -19,7 +19,7 @@ class ExpurgationSong extends Song
 {
 	var trickySpawnSound:FunkinSound;
 	var trickyGlitchSound:FunkinSound;
-	var gremlin:ScriptedModule;
+	var gremlin;
 
 	static var timerResetter:Array<FlxTimer> = [];
 
@@ -125,11 +125,11 @@ class ExpurgationSong extends Song
 
 		trickySpawnSound.play();
 
-		spawnAnim.animation.callback = function(name:String, frameNumber:Int, frameIndex:Int)
+		spawnAnim.animation.onFrameChange.add(function(name:String, frameNumber:Int, frameIndex:Int)
 		{
 			if (frameIndex == 24)
 				trickyGlitchSound.play();
-		};
+		});
 
 		spawnAnim.animation.finishCallback = function(pog:String)
 		{
