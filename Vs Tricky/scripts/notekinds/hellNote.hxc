@@ -48,7 +48,7 @@ class HellNote extends NoteKind
 	function onNoteMiss(event:NoteScriptEvent)
 	{
 		Highscore.tallies.totalNotes--;
-		
+
 		event.cancelEvent();
 	}
 
@@ -76,5 +76,15 @@ class HellNote extends NoteKind
 			splash.y -= Strumline.INITIAL_OFFSET;
 			splash.y += hellSplashData.getSplashOffsets()[1] * splash.scale.y;
 		}
+	}
+
+	function constructNoteSplash(noteKindStyle):NoteSplash
+	{
+		var result:NoteSplash = null;
+
+		result = new NoteSplash(noteKindStyle);
+		PlayState.instance.playerStrumline.add(result);
+
+		return result;
 	}
 }
